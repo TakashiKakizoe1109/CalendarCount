@@ -2,8 +2,8 @@
 /**
  * CalendarCount
  *
- * @Author  TakashiKakizoe
- * @Version 1.0.0
+ * @author  TakashiKakizoe
+ * @version 1.0.1
  *
 **/
 class CalendarCount
@@ -72,8 +72,17 @@ class CalendarCount
   **/
   public static function returnCalendarCountYear($array=null,$key=null,$countFlg=true,$yPass=3){
     if($array === null || $key === null ){
-      return false ;
+      echo('Not Found $array or $key');
+      throw new \Exception('Not Found $array or $key');
     }
+    $check = $array ;
+    $first = array_shift($check);
+    if(!isset($first[$key])){
+      echo('variable $key is wrong');
+      throw new \Exception('variable $key is wrong');
+    }
+    unset($check,$first);
+
     $returnArray = array();
     $returnCount = array();
 
@@ -112,8 +121,17 @@ class CalendarCount
   **/
   public static function returnCalendarCountMonth($array=null,$key=null,$countFlg=true,$yPass=3){
     if($array === null || $key === null ){
-      return false ;
+      echo('Not Found $array or $key');
+      throw new \Exception('Not Found $array or $key');
     }
+    $check = $array ;
+    $first = array_shift($check);
+    if(!isset($first[$key])){
+      echo('variable $key is wrong');
+      throw new \Exception('variable $key is wrong');
+    }
+    unset($check,$first);
+
     $returnArray = array();
     $returnCount = array();
 
